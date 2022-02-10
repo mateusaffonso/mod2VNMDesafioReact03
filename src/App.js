@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css"
+
+import manga from "./img_react/manga.jfif"
+
+
+class App extends Component {
+
+  state = {
+    nome: "Mateus Augusto",
+    idade: 22,
+    comidaFavorita: "estrogonofe",
+    musicas: ["Dai a Cesar o que é de Cesar - Cesar mc", "Principia - Emicida, Pastor Henrique Vieira", "Sozinho - Caetano Veloso"  ]
+
+  }
+
+
+  render() {
+
+    return(
+      <div>
+        <h1>Meu nome é {this.state.nome}</h1>
+        <h2>Tenho {this.state.idade} anos de idade</h2>
+        <h3>Minha comida favorita é {this.state.comidaFavorita}</h3>
+        <h4>Minhas músicas favoritas são:</h4>
+        <ul>
+          <li>{this.state.musicas[0]}</li>
+          <li>{this.state.musicas[1]}</li>
+          <li>{this.state.musicas[2]}</li>
+        </ul>
+        <img src={manga}/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
